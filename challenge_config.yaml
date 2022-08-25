@@ -2,16 +2,16 @@
 # https://evalai.readthedocs.io/en/latest/configuration.html
 title: Random Number Generator Challenge
 short_description: Random number generation challenge for each submission
-description: templates/description.html
-evaluation_details: templates/evaluation_details.html
-terms_and_conditions: templates/terms_and_conditions.html
+description: html_templates/description.html
+evaluation_details: html_templates/evaluation_details.html
+terms_and_conditions: html_templates/terms_and_conditions.html
 image: cvl-biwi-2013.png
-submission_guidelines: templates/submission_guidelines.html
-leaderboard_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas a libero nec sagittis.
+submission_guidelines: html_templates/submission_guidelines.html
+leaderboard_description: Compete with your colleagues on the public leaderboard
 evaluation_script: evaluation_script.zip
 remote_evaluation: False
 is_docker_based: False
-start_date: 2022-08-25 11:00:00
+start_date: 2022-08-25 08:00:00
 end_date: 2099-05-31 23:59:59
 published: False
 
@@ -19,70 +19,86 @@ leaderboard:
   - id: 1
     schema:
       {
-        "labels": ["Metric1", "Metric2", "Metric3", "Total"],
+        "labels": ["NMSE", "SSIM", "Total"],
         "default_order_by": "Total",
         "metadata": {
-          "Metric1": {
-            "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "NMSE": {
+            "sort_ascending": False,
+            "description": "Normalise mean squared error",
           },
-          "Metric2": {
+          "SSIM": {
             "sort_ascending": True,
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "Structural similarity index measure",
+          },
+          "Total": {
+            "sort_ascending": True,
+            "description": "Weighted average of NMSE & SSIM",
+          }
+        }
+      }
+  - id: 2
+    schema:
+      {
+        "labels": ["Accuracy"],
+        "default_order_by": "Accuracy",
+        "metadata": {
+          "Accuracy": {
+            "sort_ascending": True,
+            "description": "Validation set accuracy",
           }
         }
       }
 
 challenge_phases:
   - id: 1
-    name: Dev Phase
-    description: templates/challenge_phase_1_description.html
-    leaderboard_public: False
+    name: Exercise 1 - Basic Image Processing & Filtering
+    description: html/ex1.html
+    leaderboard_public: True
     is_public: True
     is_submission_public: True
-    start_date: 2019-01-19 00:00:00
+    start_date: 2022-08-25 08:00:00
     end_date: 2099-04-25 23:59:59
     test_annotation_file: annotations/test_annotations_devsplit.json
     codename: dev
-    max_submissions_per_day: 5
-    max_submissions_per_month: 50
-    max_submissions: 50
+    # max_submissions_per_day: 100
+    # max_submissions_per_month: 100
+    # max_submissions: 100
     default_submission_meta_attributes:
       - name: method_name
         is_visible: True
       - name: method_description
         is_visible: True
-      - name: project_url
-        is_visible: True
-      - name: publication_url
-        is_visible: True
-    submission_meta_attributes:
-      - name: TextAttribute
-        description: Sample
-        type: text
-        required: False
-      - name: SingleOptionAttribute
-        description: Sample
-        type: radio
-        options: ["A", "B", "C"]
-      - name: MultipleChoiceAttribute
-        description: Sample
-        type: checkbox
-        options: ["alpha", "beta", "gamma"]
-      - name: TrueFalseField
-        description: Sample
-        type: boolean
-        required: True
-    is_restricted_to_select_one_submission: False
+    # - name: project_url
+    #   is_visible: True
+    # - name: publication_url
+    #   is_visible: True
+    # submission_meta_attributes:
+    #   - name: TextAttribute
+    #     description: Sample
+    #     type: text
+    #     required: False
+    #   - name: SingleOptionAttribute
+    #     description: Sample
+    #     type: radio
+    #     options: ["A", "B", "C"]
+    #   - name: MultipleChoiceAttribute
+    #     description: Sample
+    #     type: checkbox
+    #     options: ["alpha", "beta", "gamma"]
+    #   - name: TrueFalseField
+    #     description: Sample
+    #     type: boolean
+    #     required: True
+    is_restricted_to_select_one_submission: True
     is_partial_submission_evaluation_enabled: False
     allowed_submission_file_types: ".json, .zip, .txt, .tsv, .gz, .csv, .h5, .npy, .npz"
   - id: 2
-    name: Test Phase
-    description: templates/challenge_phase_2_description.html
+    name: Exercise 2 - Principal Component Analysis (PCA)
+    description: html/ex2.html
     leaderboard_public: True
     is_public: True
     is_submission_public: True
-    start_date: 2019-01-01 00:00:00
+    start_date: 2022-08-25 08:00:00
     end_date: 2099-05-24 23:59:59
     test_annotation_file: annotations/test_annotations_testsplit.json
     codename: test
@@ -94,52 +110,68 @@ challenge_phases:
         is_visible: True
       - name: method_description
         is_visible: True
-      - name: project_url
-        is_visible: True
-      - name: publication_url
-        is_visible: True
-    submission_meta_attributes:
-      - name: TextAttribute
-        description: Sample
-        type: text
-      - name: SingleOptionAttribute
-        description: Sample
-        type: radio
-        options: ["A", "B", "C"]
-      - name: MultipleChoiceAttribute
-        description: Sample
-        type: checkbox
-        options: ["alpha", "beta", "gamma"]
-      - name: TrueFalseField
-        description: Sample
-        type: boolean
+    #   - name: project_url
+    #     is_visible: True
+    #   - name: publication_url
+    #     is_visible: True
+    # submission_meta_attributes:
+    #   - name: TextAttribute
+    #     description: Sample
+    #     type: text
+    #   - name: SingleOptionAttribute
+    #     description: Sample
+    #     type: radio
+    #     options: ["A", "B", "C"]
+    #   - name: MultipleChoiceAttribute
+    #     description: Sample
+    #     type: checkbox
+    #     options: ["alpha", "beta", "gamma"]
+    #   - name: TrueFalseField
+    #     description: Sample
+    #     type: boolean
     is_restricted_to_select_one_submission: False
     is_partial_submission_evaluation_enabled: False
 
 dataset_splits:
   - id: 1
-    name: Train Split
-    codename: train_split
+    name: Exercise 1 - Filtering (Public)
+    codename: ex1_public
   - id: 2
-    name: Test Split
-    codename: test_split
+    name: Exercise 1 - Filtering (Private)
+    codename: ex1_private
+  - id: 3
+    name: Exercise 2 - PCA (Public)
+    codename: ex2_public
+  - id: 4
+    name: Exercise 2 - PCA (Private)
+    codename: ex2_private
 
 challenge_phase_splits:
+  # Exercise 1 (Public Leaderboard)
   - challenge_phase_id: 1
-    leaderboard_id: 1
-    dataset_split_id: 1
-    visibility: 1
-    leaderboard_decimal_precision: 2
-    is_leaderboard_order_descending: True
-  - challenge_phase_id: 2
     leaderboard_id: 1
     dataset_split_id: 1
     visibility: 3
     leaderboard_decimal_precision: 2
-    is_leaderboard_order_descending: True
-  - challenge_phase_id: 2
+    is_leaderboard_order_descending: False
+  # Exercise 1 (Private Leaderboard)
+  - challenge_phase_id: 1
     leaderboard_id: 1
     dataset_split_id: 2
+    visibility: 1
+    leaderboard_decimal_precision: 2
+    is_leaderboard_order_descending: False
+  # Exercise 2 (Public Leaderboard)
+  - challenge_phase_id: 2
+    leaderboard_id: 2
+    dataset_split_id: 3
+    visibility: 3
+    leaderboard_decimal_precision: 2
+    is_leaderboard_order_descending: True
+  # Exercise 2 (Private Leaderboard)
+  - challenge_phase_id: 2
+    leaderboard_id: 2
+    dataset_split_id: 4
     visibility: 1
     leaderboard_decimal_precision: 2
     is_leaderboard_order_descending: True
