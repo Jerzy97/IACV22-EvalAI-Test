@@ -12,7 +12,7 @@ submission_guidelines: html_templates/submission_guidelines.html
 image: cvl-biwi-2013.png
 leaderboard_description: Compete with your colleagues on the public leaderboard
 
-evaluation_script: evaluation_script
+evaluation_script: evaluation_script.zip
 remote_evaluation: False
 is_docker_based: False
 
