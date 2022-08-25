@@ -1,7 +1,7 @@
 # Documentation:
 # https://evalai.readthedocs.io/en/latest/configuration.html
 
-title: IACV 22 - Projects
+title: IACV 22 - Course Projects
 short_description: Project server for the IACV course (fall 22) at ETH Zurich
 
 description: html_templates/description.html
