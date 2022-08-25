@@ -11,9 +11,6 @@ from PIL import Image
 from pathlib import Path
 from zipfile import ZipFile
 
-import numpy as np
-import pandas as pd
-
 from skimage import metrics
 
 
@@ -47,7 +44,7 @@ def evaluate(
     
     if phase_codename == 'ex1':
         # Load ground truth images
-        gt_path = Path(test_annotation_file)
+        gt_path = Path(test_annotation_file).parent
         gt_public = load_img(gt_path / 'public.png')
         gt_private = load_img(gt_path / 'private.png')
 
