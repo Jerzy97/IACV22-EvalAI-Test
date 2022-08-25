@@ -1,6 +1,5 @@
 """
 # Q. How to install custom python pip packages?
-
 # A. Uncomment the below code to install the custom python packages.
 
 import os
@@ -40,4 +39,19 @@ install_local_package("package_folder_name")
 
 """
 
+import os
+import sys
+import subprocess
+from pathlib import Path
+
 from .main import evaluate
+
+def install(package):
+    """ Install a pip python package
+        Args:
+            package ([str]): Package name with version
+    """
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install("Pillow")
+install("scikit-image")

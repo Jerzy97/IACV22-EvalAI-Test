@@ -1,16 +1,21 @@
-# If you are not sure what all these fields mean, please refer our documentation here:
+# Documentation:
 # https://evalai.readthedocs.io/en/latest/configuration.html
+
 title: IACV 22 - Projects
 short_description: Project server for the IACV course (fall 22) at ETH Zurich
+
 description: html_templates/description.html
 evaluation_details: html_templates/evaluation_details.html
 terms_and_conditions: html_templates/terms_and_conditions.html
-image: cvl-biwi-2013.png
 submission_guidelines: html_templates/submission_guidelines.html
+
+image: cvl-biwi-2013.png
 leaderboard_description: Compete with your colleagues on the public leaderboard
+
 evaluation_script: evaluation_script.zip
 remote_evaluation: False
 is_docker_based: False
+
 start_date: 2022-08-25 08:00:00
 end_date: 2099-05-31 23:59:59
 published: False
@@ -19,11 +24,11 @@ leaderboard:
   - id: 1
     schema:
       {
-        "labels": ["NMSE", "SSIM", "Total"],
+        "labels": ["PSNR", "SSIM", "Total"],
         "default_order_by": "Total",
         "metadata": {
-          "NMSE": {
-            "sort_ascending": False,
+          "PSNR": {
+            "sort_ascending": True,
             "description": "Normalise mean squared error",
           },
           "SSIM": {
@@ -58,8 +63,8 @@ challenge_phases:
     is_submission_public: False
     start_date: 2022-08-25 08:00:00
     end_date: 2099-04-25 23:59:59
-    test_annotation_file: annotations/test_annotations_devsplit.json
-    codename: dev
+    test_annotation_file: annotations/ex1
+    codename: ex1
     max_submissions_per_day: 10000
     max_submissions_per_month: 10000
     max_submissions: 10000
@@ -70,7 +75,8 @@ challenge_phases:
         is_visible: True
     is_restricted_to_select_one_submission: True
     is_partial_submission_evaluation_enabled: False
-    allowed_submission_file_types: ".json, .zip, .txt, .tsv, .gz, .csv, .h5, .npy, .npz"
+    allowed_submission_file_types: ".zip"
+
   - id: 2
     name: Exercise 2 - Principal Component Analysis (PCA)
     description: html/ex2.html
@@ -80,7 +86,7 @@ challenge_phases:
     start_date: 2022-08-25 08:00:00
     end_date: 2099-05-24 23:59:59
     test_annotation_file: annotations/test_annotations_testsplit.json
-    codename: test
+    codename: ex2
     max_submissions_per_day: 10000
     max_submissions_per_month: 10000
     max_submissions: 10000
@@ -91,6 +97,7 @@ challenge_phases:
         is_visible: True
     is_restricted_to_select_one_submission: False
     is_partial_submission_evaluation_enabled: False
+    allowed_submission_file_types: ".zip, .txt, .csv, .h5, .npy"
 
 dataset_splits:
   - id: 1
