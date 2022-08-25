@@ -68,27 +68,6 @@ challenge_phases:
         is_visible: True
       - name: method_description
         is_visible: True
-    # - name: project_url
-    #   is_visible: True
-    # - name: publication_url
-    #   is_visible: True
-    # submission_meta_attributes:
-    #   - name: TextAttribute
-    #     description: Sample
-    #     type: text
-    #     required: False
-    #   - name: SingleOptionAttribute
-    #     description: Sample
-    #     type: radio
-    #     options: ["A", "B", "C"]
-    #   - name: MultipleChoiceAttribute
-    #     description: Sample
-    #     type: checkbox
-    #     options: ["alpha", "beta", "gamma"]
-    #   - name: TrueFalseField
-    #     description: Sample
-    #     type: boolean
-    #     required: True
     is_restricted_to_select_one_submission: True
     is_partial_submission_evaluation_enabled: False
     allowed_submission_file_types: ".json, .zip, .txt, .tsv, .gz, .csv, .h5, .npy, .npz"
@@ -110,25 +89,6 @@ challenge_phases:
         is_visible: True
       - name: method_description
         is_visible: True
-    #   - name: project_url
-    #     is_visible: True
-    #   - name: publication_url
-    #     is_visible: True
-    # submission_meta_attributes:
-    #   - name: TextAttribute
-    #     description: Sample
-    #     type: text
-    #   - name: SingleOptionAttribute
-    #     description: Sample
-    #     type: radio
-    #     options: ["A", "B", "C"]
-    #   - name: MultipleChoiceAttribute
-    #     description: Sample
-    #     type: checkbox
-    #     options: ["alpha", "beta", "gamma"]
-    #   - name: TrueFalseField
-    #     description: Sample
-    #     type: boolean
     is_restricted_to_select_one_submission: False
     is_partial_submission_evaluation_enabled: False
 
@@ -147,31 +107,27 @@ dataset_splits:
     codename: ex2_private
 
 challenge_phase_splits:
-  # Exercise 1 (Public Leaderboard)
   - challenge_phase_id: 1
     leaderboard_id: 1
     dataset_split_id: 1
     visibility: 3
     leaderboard_decimal_precision: 2
     is_leaderboard_order_descending: False
-  # Exercise 1 (Private Leaderboard)
   - challenge_phase_id: 1
     leaderboard_id: 1
     dataset_split_id: 2
     visibility: 1
     leaderboard_decimal_precision: 2
     is_leaderboard_order_descending: False
-  # Exercise 2 (Public Leaderboard)
   - challenge_phase_id: 2
     leaderboard_id: 2
     dataset_split_id: 3
     visibility: 3
     leaderboard_decimal_precision: 2
-    is_leaderboard_order_descending: True
-  # Exercise 2 (Private Leaderboard)
+    is_leaderboard_order_descending: False
   - challenge_phase_id: 2
     leaderboard_id: 2
     dataset_split_id: 4
     visibility: 1
     leaderboard_decimal_precision: 2
-    is_leaderboard_order_descending: True
+    is_leaderboard_order_descending: False
