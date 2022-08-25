@@ -55,7 +55,7 @@ challenge_phases:
     description: html/ex1.html
     leaderboard_public: True
     is_public: True
-    is_submission_public: True
+    is_submission_public: False
     start_date: 2022-08-25 08:00:00
     end_date: 2099-04-25 23:59:59
     test_annotation_file: annotations/test_annotations_devsplit.json
