@@ -63,7 +63,7 @@ challenge_phases:
     is_submission_public: False
     start_date: 2022-08-25 08:00:00
     end_date: 2099-04-25 23:59:59
-    test_annotation_file: annotations/ex1/files.json
+    test_annotation_file: annotations/files.json
     codename: ex1
     max_submissions_per_day: 10000
     max_submissions_per_month: 10000
@@ -85,7 +85,7 @@ challenge_phases:
     is_submission_public: True
     start_date: 2022-08-25 08:00:00
     end_date: 2099-05-24 23:59:59
-    test_annotation_file: annotations/ex2/files.json
+    test_annotation_file: annotations/files.json
     codename: ex2
     max_submissions_per_day: 10000
     max_submissions_per_month: 10000
