@@ -7,22 +7,22 @@ Date  : 25. August 2022
 """
 
 
-from PIL import Image
-from pathlib import Path
-from zipfile import ZipFile
+# from PIL import Image
+# from pathlib import Path
+# from zipfile import ZipFile
 
-import numpy as np
-from skimage import metrics
+# import numpy as np
+# from skimage import metrics
 
 
-def load_img(path):
-    """ Load image using PIL then convert
-        H x W x C in [0, 255] --> C x H x W in [0, 1]
-    """
-    img = Image.open(path)
-    arr = np.array(img)
-    arr = arr[None, :, :] if arr.ndim == 2 else arr.transpose(2, 0, 1)
-    return arr.astype(np.float32) / 255.
+# def load_img(path):
+#     """ Load image using PIL then convert
+#         H x W x C in [0, 255] --> C x H x W in [0, 1]
+#     """
+#     img = Image.open(path)
+#     arr = np.array(img)
+#     arr = arr[None, :, :] if arr.ndim == 2 else arr.transpose(2, 0, 1)
+#     return arr.astype(np.float32) / 255.
 
 
 def evaluate(

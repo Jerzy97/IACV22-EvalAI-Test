@@ -12,7 +12,7 @@ def install(package):
 
     # Args:
     #     package ([str]): Package name with version
-    
+
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 
@@ -21,7 +21,7 @@ def install_local_package(folder_name):
 
     # Args:
     #     folder_name ([str]): name of the folder placed in evaluation_script/
-    
+
     subprocess.check_output(
     [
         sys.executable,
@@ -39,21 +39,4 @@ install_local_package("package_folder_name")
 
 """
 
-import os
-import sys
-import subprocess
-from pathlib import Path
-
 from .main import evaluate
-
-def install(package):
-    """ Install a pip python package
-        Args:
-            package ([str]): Package name with version
-    """
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-install("Pillow")
-install("numpy")
-install("pandas")
-install("scikit-image")
