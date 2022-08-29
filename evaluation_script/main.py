@@ -97,7 +97,7 @@ def evaluate(
             }
         ]
         # To display the results in the result file
-        output['submission_result'] = output['result'][0]['ex1_public']
+        output['submission_result'] = output['result'][0]
 
     elif phase_codename == 'ex2':
         output['result'] = [
@@ -105,6 +105,6 @@ def evaluate(
             {'ex2_private': {'Accuracy': 0.5}}
         ]
         # To display the results in the result file
-        output['submission_result'] = output['result'][0]['ex2_public']
+        output['submission_result'] = output['result'][0]
 
     return output
